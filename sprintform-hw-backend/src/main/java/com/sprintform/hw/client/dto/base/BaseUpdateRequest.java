@@ -9,7 +9,9 @@ import lombok.experimental.SuperBuilder;
 import java.util.UUID;
 
 /**
- * @author peti
+ * Base request for update operation.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @SuperBuilder

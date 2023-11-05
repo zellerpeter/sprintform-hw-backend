@@ -15,7 +15,7 @@ import java.util.UUID;
 
 /**
  * Base entity that holds a unique identifier, and audit fields.
- * @author peti
+ * @author zellerpeter
  */
 @MappedSuperclass
 @NoArgsConstructor
@@ -27,23 +27,38 @@ import java.util.UUID;
 @FieldNameConstants
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity {
+    /**
+     * Unique identifier.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(nullable = false)
     UUID id;
 
+    /**
+     * Create timestamp.
+     */
     @CreatedDate
     @Column(nullable = false, updatable = false)
     LocalDateTime createdAt;
 
+    /**
+     * Update timestamp.
+     */
     @LastModifiedDate
     @Column(nullable = false)
     LocalDateTime updatedAt;
 
+    /**
+     * Create user.
+     */
     @CreatedBy
     @Column(nullable = false, updatable = false)
     UUID createdBy;
 
+    /**
+     * Update user.
+     */
     @LastModifiedBy
     @Column(nullable = false)
     UUID updatedBy;

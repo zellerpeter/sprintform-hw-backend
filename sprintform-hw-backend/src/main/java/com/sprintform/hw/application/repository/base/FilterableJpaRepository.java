@@ -11,7 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.UUID;
 
 /**
- * @author peti
+ * JpaRepository extension with filterable list functionality.
+ * @author zellerpeter
  */
 @NoRepositoryBean
 public interface FilterableJpaRepository<E> extends JpaRepository<E, UUID> {

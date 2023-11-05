@@ -17,10 +17,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 /**
- * @author peti
+ * @author zellerpeter
  */
 @ControllerAdvice
-public class FalconExceptionHandler extends ResponseEntityExceptionHandler {
+public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = ApplicationException.class)
     protected ResponseEntity<ErrorResponse> handleConflict(ApplicationException ex, WebRequest request) {

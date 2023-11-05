@@ -6,7 +6,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 /**
- * @author peti
+ * Exception that contains an error code.
+ *
+ * @author zellerpeter
  */
 @RequiredArgsConstructor
 @Getter

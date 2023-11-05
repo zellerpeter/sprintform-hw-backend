@@ -19,7 +19,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- * @author peti
+ * Configuration class.
+ *
+ * @author zellerpeter
  */
 @Configuration
 @ComponentScan(basePackages = "com.sprintform.hw")
@@ -46,7 +48,6 @@ public class ApplicationConfig {
     @Primary
     public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
         return builder -> {
-
             builder.simpleDateFormat("yyyy.MM.dd HH:mm");
 
             builder.featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);

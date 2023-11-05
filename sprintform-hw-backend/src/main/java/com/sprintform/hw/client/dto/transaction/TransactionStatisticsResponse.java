@@ -1,19 +1,16 @@
 package com.sprintform.hw.client.dto.transaction;
 
 import com.sprintform.hw.application.model.entity.transaction.TransactionCategoryType;
-import com.sprintform.hw.client.dto.base.BaseReadResponse;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
-
-import java.time.ZonedDateTime;
 
 /**
  * Aggregated statistics response.
- * @author peti
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor

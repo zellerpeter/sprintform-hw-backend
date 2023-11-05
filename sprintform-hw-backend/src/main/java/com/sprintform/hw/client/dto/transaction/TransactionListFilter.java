@@ -1,6 +1,5 @@
 package com.sprintform.hw.client.dto.transaction;
 
-import com.sprintform.hw.client.dto.base.FilterRange;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,7 +9,9 @@ import lombok.extern.jackson.Jacksonized;
 import java.time.ZonedDateTime;
 
 /**
- * @author peti
+ * Filter conditions for transaction listing.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder

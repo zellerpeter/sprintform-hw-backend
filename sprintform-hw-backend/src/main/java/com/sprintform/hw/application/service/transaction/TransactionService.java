@@ -10,11 +10,25 @@ import com.sprintform.hw.client.dto.transaction.TransactionStatisticsResponse;
 import java.util.List;
 
 /**
- * @author peti
+ * Service for Transaction operations.
+ *
+ * @author zellerpeter
  */
 public interface TransactionService extends CrudService<Transaction, TransactionListFilter> {
 
-    List<TransactionStatisticsResponse> findStatistics(TransactionStatisticsFilter filter);
+    /**
+     * Calculates the aggregated statistics by Transaction category.
+     *
+     * @param filter filter conditions
+     * @return List of aggregated Transaction statistics
+     */
+    List<TransactionStatisticsResponse> calculateStatistics(TransactionStatisticsFilter filter);
 
+    /**
+     * Calculates a forecast based on the average of the last given months.
+     *
+     * @param months last months to calculate the average for
+     * @return average spending of the last given months
+     */
     ForecastResponse calculateForecast(final Integer months);
 }

@@ -10,16 +10,24 @@ import lombok.experimental.SuperBuilder;
 import java.util.List;
 
 /**
- * @author peti
+ * Response for validation errors.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @SuperBuilder
 @Getter
 public class ValidationErrorResponse extends ErrorResponse {
 
+    /**
+     * Contains all field validation errors.
+     */
     @Singular
     List<FieldError> fieldErrors;
 
+    /**
+     * Contains other errors, e.g.: from custom validation.
+     */
     @Singular
     List<String> errors;
 }

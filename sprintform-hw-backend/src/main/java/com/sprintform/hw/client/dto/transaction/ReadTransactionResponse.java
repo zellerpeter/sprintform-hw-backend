@@ -11,7 +11,9 @@ import lombok.extern.jackson.Jacksonized;
 import java.time.ZonedDateTime;
 
 /**
- * @author peti
+ * Read response for transactions.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @SuperBuilder

@@ -2,7 +2,6 @@ package com.sprintform.hw.application.repository.specification.base;
 
 import com.sprintform.hw.client.dto.base.FilterRange;
 import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.Expression;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
 
@@ -10,7 +9,7 @@ import java.util.Collection;
 
 /**
  * Utility methods for filter conditions for specifications.
- * @author peti
+ * @author zellerpeter
  */
 public final class SpecificationHelper {
 

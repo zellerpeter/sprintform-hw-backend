@@ -4,14 +4,12 @@ import com.sprintform.hw.application.model.entity.transaction.Transaction;
 import com.sprintform.hw.application.repository.specification.base.BaseListSpecification;
 import com.sprintform.hw.client.dto.base.FilterRange;
 import com.sprintform.hw.client.dto.transaction.TransactionListFilter;
-import jakarta.persistence.criteria.Expression;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import static com.sprintform.hw.application.repository.specification.base.SpecificationHelper.addLikeFilterFor;
 import static com.sprintform.hw.application.repository.specification.base.SpecificationHelper.addRangeFilterFor;
@@ -19,7 +17,7 @@ import static com.sprintform.hw.application.repository.specification.base.Specif
 /**
  * Filter conditions for transaction listing.
  *
- * @author peti
+ * @author zellerpeter
  */
 @Component
 public class TransactionListSpecification implements BaseListSpecification<Transaction, TransactionListFilter> {

@@ -8,11 +8,24 @@ import org.springframework.data.jpa.domain.Specification;
 import java.util.List;
 
 /**
- * @author peti
+ * Additional repository operations, like statistics aggregation and forecast.
+ * @author zellerpeter
  */
 public interface CustomTransactionRepository {
 
-    List<TransactionStatisticsResponse> findStatistics(Specification<Transaction> specification);
+    /**
+     * Calculates the aggregated statistics by Transaction category.
+     *
+     * @param specification filter conditions
+     * @return List of aggregated Transaction statistics
+     */
+    List<TransactionStatisticsResponse> calculateStatistics(Specification<Transaction> specification);
 
+    /**
+     * Calculates a forecast based on the average of the last given months.
+     *
+     * @param months last months to calculate the average for
+     * @return average spending of the last given months
+     */
     ForecastResponse calculateForecast(final Integer months);
 }

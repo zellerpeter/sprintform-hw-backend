@@ -16,7 +16,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.UUID;
 
 /**
- * @author peti
+ * Base service implementation for crud operations and list with filtering.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor
@@ -28,6 +30,12 @@ public abstract class BaseCrudService<E extends BaseEntity, F>
 
     BaseListSpecification<E, F> specification;
 
+    /**
+     * Update operation implementation needs to be provided by the subclass.
+     * @param from source entity
+     * @param target target entity
+     * @return updated entity
+     */
     protected abstract E update(final E from, final E target);
 
     @Override

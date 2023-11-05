@@ -7,7 +7,9 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * @author peti
+ * Response for field validation errors.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @SuperBuilder
@@ -15,7 +17,13 @@ import lombok.experimental.SuperBuilder;
 @Getter
 public class FieldError {
 
+    /**
+     * Name of the field.
+     */
     String field;
 
+    /**
+     * Description of the validation error.
+     */
     String description;
 }

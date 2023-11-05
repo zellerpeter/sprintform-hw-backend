@@ -6,7 +6,8 @@ import org.springframework.stereotype.Repository;
 
 /**
  * Repository for transaction operations.
- * @author peti
+ *
+ * @author zellerpeter
  */
 @Repository
 public interface TransactionRepository extends FilterableJpaRepository<Transaction> {

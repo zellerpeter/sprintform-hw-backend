@@ -17,11 +17,10 @@ import org.springframework.stereotype.Repository;
 
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 import java.util.List;
 
 /**
- * @author peti
+ * @author zellerpeter
  */
 @Repository
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -31,7 +30,7 @@ public class CustomTransactionRepositoryImpl implements CustomTransactionReposit
     EntityManager entityManager;
 
     @Override
-    public List<TransactionStatisticsResponse> findStatistics(final Specification<Transaction> specification) {
+    public List<TransactionStatisticsResponse> calculateStatistics(final Specification<Transaction> specification) {
         final CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         final CriteriaQuery<TransactionStatisticsResponse> criteriaQuery = cb.createQuery(TransactionStatisticsResponse.class);
 
@@ -59,9 +58,9 @@ public class CustomTransactionRepositoryImpl implements CustomTransactionReposit
 
         criteriaQuery.multiselect(cb.avg(root.get(Transaction.Fields.sum)));
 
-        final ZonedDateTime monthFilter = ZonedDateTime.now().minusMonths(months).truncatedTo(ChronoUnit.DAYS);
+        final ZonedDateTime monthFilterValue = ZonedDateTime.now().minusMonths(months).truncatedTo(ChronoUnit.DAYS);
 
-        criteriaQuery.where(cb.greaterThanOrEqualTo(root.get(Transaction.Fields.paidAt), monthFilter));
+        criteriaQuery.where(cb.greaterThanOrEqualTo(root.get(Transaction.Fields.paidAt), monthFilterValue));
 
         final TypedQuery<ForecastResponse> query = entityManager.createQuery(criteriaQuery);
 

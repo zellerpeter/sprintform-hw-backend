@@ -8,7 +8,8 @@ import lombok.extern.jackson.Jacksonized;
 
 /**
  * Aggregated statistics response.
- * @author peti
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor

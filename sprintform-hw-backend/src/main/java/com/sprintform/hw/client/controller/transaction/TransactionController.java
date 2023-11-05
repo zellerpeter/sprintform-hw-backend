@@ -6,8 +6,6 @@ import com.sprintform.hw.application.service.transaction.TransactionService;
 import com.sprintform.hw.client.controller.base.BaseCrudController;
 import com.sprintform.hw.client.dto.transaction.*;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
-import jakarta.websocket.server.PathParam;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @author peti
+ * Rest controller for Transaction API endpoint.
+ *
+ * @author zellerpeter
  */
 @RestController
 @RequestMapping("/transaction")
@@ -26,17 +26,29 @@ public class TransactionController extends BaseCrudController<Transaction,
         UpdateTransactionRequest,
         ListTransactionResponse,
         TransactionListFilter> {
+
     public TransactionController(final TransactionService service, final TransactionMapper mapper) {
         super(service, mapper);
     }
 
+    /**
+     * Aggregated statistics by transaction category.
+     *
+     * @param filter filter conditions
+     * @return list of aggregated statistics
+     */
     @GetMapping("/statistics")
     public List<TransactionStatisticsResponse> statistics(@Valid TransactionStatisticsFilter filter) {
         final TransactionService service = (TransactionService) getService();
 
-        return service.findStatistics(filter);
+        return service.calculateStatistics(filter);
     }
 
+    /**
+     * Forecast by calculating the average spending of the last given months.
+     * @param months months to calculate the average for
+     * @return average spending
+     */
     @GetMapping("/forecast")
     public ForecastResponse forecast(@RequestParam Integer months) {
         final TransactionService service = (TransactionService) getService();

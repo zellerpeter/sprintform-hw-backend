@@ -3,7 +3,8 @@ package com.sprintform.hw.application.repository.specification.base;
 import org.springframework.data.jpa.domain.Specification;
 
 /**
- * @author peti
+ * Specification for list filtering.
+ * @author zellerpeter
  */
 public interface BaseListSpecification<E, F> {
 

@@ -7,13 +7,23 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * @author peti
+ * Base response for errors.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @SuperBuilder
 @AllArgsConstructor
 @Getter
 public class ErrorResponse {
+
+    /**
+     * Error code.
+     */
     int code;
+
+    /**
+     * Description of the error.
+     */
     String description;
 }

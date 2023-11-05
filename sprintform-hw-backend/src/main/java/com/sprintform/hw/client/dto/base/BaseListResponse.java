@@ -8,7 +8,9 @@ import lombok.experimental.SuperBuilder;
 import java.util.UUID;
 
 /**
- * @author peti
+ * Base response for list operation.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @SuperBuilder

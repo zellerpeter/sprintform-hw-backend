@@ -5,7 +5,9 @@ import lombok.experimental.FieldDefaults;
 import lombok.extern.jackson.Jacksonized;
 
 /**
- * @author peti
+ * Used for filtering a field for a range of values.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
@@ -14,7 +16,13 @@ import lombok.extern.jackson.Jacksonized;
 @Jacksonized
 public class FilterRange<T> {
 
+    /**
+     * Lower bound of the range.
+     */
     T from;
 
+    /**
+     * Upper bound of the range.
+     */
     T to;
 }

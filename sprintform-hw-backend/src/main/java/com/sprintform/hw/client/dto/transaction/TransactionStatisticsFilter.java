@@ -6,10 +6,10 @@ import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.jackson.Jacksonized;
 
-import java.time.ZonedDateTime;
-
 /**
- * @author peti
+ * Filter conditions for aggregated statistics.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder

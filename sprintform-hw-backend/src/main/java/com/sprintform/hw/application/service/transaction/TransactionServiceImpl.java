@@ -17,7 +17,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author peti
+ * TransactionService implementation.
+ *
+ * @author zellerpeter
  */
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -49,8 +51,8 @@ public class TransactionServiceImpl extends BaseCrudService<Transaction, Transac
     }
 
     @Override
-    public List<TransactionStatisticsResponse> findStatistics(final TransactionStatisticsFilter filter) {
-        return customTransactionRepository.findStatistics(statisticsSpecification.getListFilterSpecification(filter));
+    public List<TransactionStatisticsResponse> calculateStatistics(final TransactionStatisticsFilter filter) {
+        return customTransactionRepository.calculateStatistics(statisticsSpecification.getListFilterSpecification(filter));
     }
 
     @Override

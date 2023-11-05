@@ -2,7 +2,6 @@ package com.sprintform.hw.client.controller.base;
 
 import com.sprintform.hw.application.mapper.base.EntityMapper;
 import com.sprintform.hw.application.model.entity.base.BaseEntity;
-import com.sprintform.hw.application.service.base.BaseCrudService;
 import com.sprintform.hw.application.service.base.CrudService;
 import com.sprintform.hw.client.dto.base.BaseUpdateRequest;
 import jakarta.validation.Valid;
@@ -17,7 +16,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 /**
- * @author peti
+ * Base controller implementation for crud operations.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @AllArgsConstructor

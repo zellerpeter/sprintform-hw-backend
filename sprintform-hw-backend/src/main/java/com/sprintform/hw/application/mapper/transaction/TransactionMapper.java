@@ -9,7 +9,8 @@ import com.sprintform.hw.client.dto.transaction.UpdateTransactionRequest;
 import org.mapstruct.Mapper;
 
 /**
- * @author peti
+ * Mapper for Transaction service.
+ * @author zellerpeter
  */
 @Mapper
 public interface TransactionMapper extends EntityMapper<Transaction,

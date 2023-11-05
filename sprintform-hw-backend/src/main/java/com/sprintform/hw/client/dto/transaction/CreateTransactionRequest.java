@@ -1,8 +1,6 @@
 package com.sprintform.hw.client.dto.transaction;
 
 import com.sprintform.hw.application.model.entity.transaction.TransactionCategoryType;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,7 +10,9 @@ import lombok.extern.jackson.Jacksonized;
 import java.time.ZonedDateTime;
 
 /**
- * @author peti
+ * Create request for transactions.
+ *
+ * @author zellerpeter
  */
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @Builder
