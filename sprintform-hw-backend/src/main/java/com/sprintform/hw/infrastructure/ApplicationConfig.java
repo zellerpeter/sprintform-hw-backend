@@ -48,7 +48,7 @@ public class ApplicationConfig {
     @Primary
     public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
         return builder -> {
-            builder.simpleDateFormat("yyyy.MM.dd HH:mm");
+            //builder.simpleDateFormat("yyyy.MM.dd HH:mm");
 
             builder.featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         };
