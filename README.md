@@ -9,14 +9,18 @@ Tools that are required to build and run the application:
 
 ## Build and run
 
-To build the application please perform the following command:
+To build the application please perform the following command: 
+
 `mvn clean install`
 
-To run the application please perform the following steps:
+To run the application please perform the following steps: 
+
 Navigate to the target directory:
+
 `cd target`
 
 Execute the runnable jar:
+
 `java -jar sprintform-hw-backend-1.0-SNAPSHOT.jar`
 
 ## API documentation
