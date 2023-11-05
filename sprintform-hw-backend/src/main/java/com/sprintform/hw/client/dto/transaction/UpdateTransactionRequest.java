@@ -2,6 +2,7 @@ package com.sprintform.hw.client.dto.transaction;
 
 import com.sprintform.hw.application.model.entity.transaction.TransactionCategoryType;
 import com.sprintform.hw.client.dto.base.BaseUpdateRequest;
+import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
@@ -21,9 +22,14 @@ import java.time.ZonedDateTime;
 @Jacksonized
 public class UpdateTransactionRequest extends BaseUpdateRequest {
 
+    @NotNull
     String summary;
+    @NotNull
     TransactionCategoryType category;
+    @NotNull
     Long sum;
+    @NotNull
     String currency;
+    @NotNull
     ZonedDateTime paidAt;
 }

@@ -49,8 +49,8 @@ public class TransactionController extends BaseCrudController<Transaction,
      * @param months months to calculate the average for
      * @return average spending
      */
-    @GetMapping("/forecast")
-    public ForecastResponse forecast(@RequestParam Integer months) {
+    @GetMapping("/forecast/{months}")
+    public ForecastResponse forecast(@PathVariable Integer months) {
         final TransactionService service = (TransactionService) getService();
 
         return service.calculateForecast(months);
